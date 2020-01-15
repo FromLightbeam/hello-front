@@ -15,10 +15,10 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/likes">
+        <Route path="/likes/">
           <Likes/>
         </Route>
-        <Route path="/follows">
+        <Route path="/follows/:userId">
           <Follow/>
         </Route>
         <Route path="/">
