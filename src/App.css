@@ -38,9 +38,17 @@
 }
 
 
+.layout__name {
+  text-align: center;
+}
+
+
+
 .follows__items {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .follow__paper {

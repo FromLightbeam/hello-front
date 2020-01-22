@@ -40,12 +40,16 @@ function Follows({ url, header }) {
         <Button variant='contained' onClick={save}>save</Button>
       </div>
       <Divider/>
-      <div>
-        {userDo.map(user => <div>+<a target='_blank' href={`https://www.instagram.com/${user}/`} key={user}> {user}</a></div>)}
+      <div>    
+        {userDo && userDo.length
+          ? userDo.map(user => <div>+<a target='_blank' href={`https://www.instagram.com/${user}/`} key={user}> {user}</a></div>) 
+          : <i>...</i>}
       </div>
       <Divider/>
       <div>
-        {userUndo.map(user => <div>-<a target='_blank' href={`https://www.instagram.com/${user}/`} key={user}> {user}</a></div>)}
+        {userUndo && userUndo.length 
+          ? userUndo.map(user => <div>-<a target='_blank' href={`https://www.instagram.com/${user}/`} key={user}> {user}</a></div>) 
+          : <i>...</i>}
       </div>
     </Paper>
   )
@@ -57,8 +61,7 @@ function Info() {
   const { userId } = useParams();
 
   return (
-    <MainLayout>
-      <h1>Follow</h1>
+    <MainLayout name='Follow'>
       <div className="follows__items">
         <Follows 
           header='Following'
