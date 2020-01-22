@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+
+.follows__items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.follow__paper {
+  min-width: 200px;
+  padding: 10px 20px;
+  margin: 20px;
+}
+
+.follow__paper > div {
+  margin: 10px 0;
+}
+
+.follow__paper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.follow__paper-header > * {
+  margin: 0;
+}

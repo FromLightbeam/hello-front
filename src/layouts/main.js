@@ -6,8 +6,8 @@ function MainLayout(props) {
 
   return (
     <div>
-      <div><Link to='/follows'>Follows</Link></div>
-      <div><Link to='/likes'>Likes</Link></div>
+      {/* <div><Link to='/follows'>Follows</Link></div>
+      <div><Link to='/likes'>Likes</Link></div> */}
       {children}    
     </div>
   );
