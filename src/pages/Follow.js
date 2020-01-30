@@ -13,18 +13,19 @@ function Follows({ url, header }) {
   // May be make single variable ?
   const [userDo, setUserDo] = useState([]);
   const [userUndo, setUserUndo] = useState([]);
+  const [timestamp, setTimeStamp] = useState('');
 
   function getFollowData() {
     axios.get(url).then(response => {
       if (response.data) {
-        setUserDo(response.data.do || [])
-        setUserUndo(response.data.undo || [])
+        setUserDo(response.data.do || []);
+        setUserUndo(response.data.undo || []);
+        setTimeStamp(response.data.timestamp || '');
       }
     }) 
   } 
 
   useEffect(() => {
-    // TODO name should be from url
     getFollowData();
   }, []);
 
@@ -35,6 +36,7 @@ function Follows({ url, header }) {
     }).then(() => getFollowData())
   }
 
+  var time = new Date(timestamp);
   return (
     <Paper elevation={3} className='follow__paper'>
       <div className='follow__paper-header'>
@@ -53,8 +55,10 @@ function Follows({ url, header }) {
           ? userUndo.map(user => <div key={user}>-<a target='_blank' href={`https://www.instagram.com/${user}/`}> {user}</a></div>) 
           : <i>...</i>}
       </div>
+      <Divider/>
+      <span className='label'>{time.toUTCString()}</span>
     </Paper>
-  )
+  );
 }
 
 
