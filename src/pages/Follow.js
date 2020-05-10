@@ -46,13 +46,13 @@ function Follows({ url, header }) {
       <Divider/>
       <div>    
         {userDo && userDo.length
-          ? userDo.map(user => <div key={user}>+<a target='_blank' href={`https://www.instagram.com/${user}/`}> {user}</a></div>) 
+          ? userDo.map(user => <div key={user}>+<a target='_blank' rel="noopener noreferrer" href={`https://www.instagram.com/${user}/`}> {user}</a></div>) 
           : <i>...</i>}
       </div>
       <Divider/>
       <div>
         {userUndo && userUndo.length 
-          ? userUndo.map(user => <div key={user}>-<a target='_blank' href={`https://www.instagram.com/${user}/`}> {user}</a></div>) 
+          ? userUndo.map(user => <div key={user}>-<a target='_blank' rel="noopener noreferrer" href={`https://www.instagram.com/${user}/`}> {user}</a></div>) 
           : <i>...</i>}
       </div>
       <Divider/>
